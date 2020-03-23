@@ -31,7 +31,8 @@ export default class Sueca extends Component {
     const s = Math.floor(Math.random() * 12) + 1;
     this.setState({
       selected: this.state.cards[s],
-      selectedRule: this.state.rules[s]});
+      selectedRule: this.state.rules[s],
+    });
   };
 
   render() {
@@ -48,13 +49,17 @@ export default class Sueca extends Component {
         </View>
         <Text style={styles.selectedCard}>{selected ? selected : ''}</Text>
 
-        <Text style={styles.selectedCardRule}>{selectedRule ? selectedRule : ''}</Text>
+        <Text style={styles.selectedCardRule}>
+          {selectedRule ? selectedRule : ''}
+        </Text>
 
         <TouchableOpacity style={styles.button} onPress={() => this.getCard()}>
           <Text style={styles.textButton}>Tirar Carta</Text>
-        </TouchableOpacity> 
-        
-        <TouchableOpacity style={styles.button} onPress={() => this.props.navigation.navigate('Regras')}>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => this.props.navigation.navigate('Regras')}>
           <Text style={styles.textButton}>Ver Regras</Text>
         </TouchableOpacity>
       </View>

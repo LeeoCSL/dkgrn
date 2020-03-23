@@ -7,6 +7,10 @@ import {
 import LinearGradient from 'react-native-linear-gradient';
 
 export default class HomeScreen extends Component {
+  static navigationOptions = {
+    headerTitle: 'Início',
+  };
+
   render() {
     return (
       <View>
@@ -19,6 +23,14 @@ export default class HomeScreen extends Component {
           }}>
           <Text style={styles.textButton}>Sueca</Text>
         </TouchableOpacity>
+
+        <LinearGradient
+          start={{x: 0, y: 0}}
+          end={{x: 1, y: 0}}
+          colors={['#4c669f', '#3b5998', '#192f6a']}
+          style={styles.linearGradient}>
+          <Text style={styles.buttonText}>Sign in with Facebook</Text>
+        </LinearGradient>
       </View>
     );
   }
@@ -30,6 +42,14 @@ const styles = StyleSheet.create({
     paddingLeft: 15,
     paddingRight: 15,
     borderRadius: 5,
+  },
+  buttonText: {
+    fontSize: 18,
+    fontFamily: 'Gill Sans',
+    textAlign: 'center',
+    margin: 10,
+    color: '#ffffff',
+    backgroundColor: 'transparent',
   },
   title: {
     alignSelf: 'center',

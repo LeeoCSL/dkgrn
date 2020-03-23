@@ -4,13 +4,13 @@ import {createStackNavigator} from 'react-navigation-stack';
 
 import HomeScreen from './pages/Home/HomeScreen';
 import Sueca from './pages/Sueca/Sueca';
-import Regras from './pages/Sueca/Regras';
+import Regras from './pages/Regras/Regras';
 
 const Routes = createAppContainer(
   createStackNavigator({
     HomeScreen,
     Sueca,
-    Regras
+    Regras,
   }),
 );
 
